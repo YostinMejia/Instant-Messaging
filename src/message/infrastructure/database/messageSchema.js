@@ -1,4 +1,4 @@
-import { Schema, Types, model } from "mongoose";
+import { Schema, model } from "mongoose";
 
 const MessageSchema = new Schema({
     sentBy: { type: String, required: true },

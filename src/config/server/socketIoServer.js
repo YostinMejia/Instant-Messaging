@@ -1,5 +1,6 @@
 import { Server } from "socket.io";
-import { MessageRepositoryMongodb } from "../../message/infrastructure/repositories/messageRepository.mjs";
+import { MessageRepositoryMongodb } from "../../message/infrastructure/repositories/MessageRepositoryMongodb.js";
+import { MessageMongodbAdapter } from "../../message/infrastructure/adapters/messageMongoDbAdapter.js";
 import { MessageController } from "../../message/infrastructure/controllers/messageController.js";
 
 export function startSocketServer(httpServer) {
@@ -7,8 +8,9 @@ export function startSocketServer(httpServer) {
     const io = new Server(httpServer);
 
     io.on("connection", (socket) => {
-        const message = new MessageController(new MessageRepositoryMongodb())
-        console.log("a user connected");
+        const mongodbAdapter = new MessageMongodbAdapter(new MessageRepositoryMongodb())
+        const message = new MessageController(mongodbAdapter)
+        console.log("A user connected", socket.id);
 
         socket.on("chat typing", (userName) => {
             socket.broadcast.emit("chat typing", userName);
