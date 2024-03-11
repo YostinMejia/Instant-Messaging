@@ -1,5 +1,5 @@
 {
-  "name": "instant-messaging-api",
+  "name": "instant-messaging",
   "description": "",
   "version": "1.0.0",
   "type": "module",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/YostinMejia/Instant-Messaging-Api.git"
+    "url": "git+https://github.com/YostinMejia/Instant-Messaging.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/YostinMejia/Instant-Messaging-Api/issues"
+    "url": "https://github.com/YostinMejia/Instant-Messaging/issues"
   },
-  "homepage": "https://github.com/YostinMejia/Instant-Messaging-Api#readme",
+  "homepage": "https://github.com/YostinMejia/Instant-Messaging#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
@@ -27,6 +27,8 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.1.1",
     "socket.io": "^4.7.4",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0",
     "uuid": "^9.0.1"
   },
   "devDependencies": {
